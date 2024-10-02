@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>this is for Store book</h1>
+
+<div class="mb-3">
+    <form method="post">
+        {% csrf_token %} {{form.as_p }}
+
+        <button type="submit" className="btn ">Submit</button>
+    </form>
+</div>
+
+{% endblock %}

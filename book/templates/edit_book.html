@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>this is for Edit book</h1>
+
+<div class="mb-3">
+    <form method="post">{% csrf_token %} {{form.as_p }}</form>
+</div>
+
+{% endblock %}

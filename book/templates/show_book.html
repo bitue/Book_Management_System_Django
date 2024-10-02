@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>this is for Show Book book</h1>
+
+<div>
+    <div class="card">
+        {% for item in books %}
+        <div class="card-header">{{item.id}}</div>
+        <div class="card-body">
+            <h5 class="card-title">{{item.book_name}}</h5>
+            <p class="card-text">{{item.author}}</p>
+            <p class="card-text">{{item.category}}</p>
+            <p class="card-text">{{item.first_published}}</p>
+            <p class="card-text">{{item.last_published}}</p>
+            <button class="btn">
+                <a href="{% url 'edit_book_id' id=item.id %}">Update</a>
+            </button>
+            <button class="btn btn-danger">
+                <a href="{% url 'delete_book_id' id=item.id %}">delete</a>
+            </button>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
